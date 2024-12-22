@@ -1,6 +1,7 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import AuthContext from "../context/AuthContext/AuthContext";
+import logo from '../assets/fashion.jpg'
 
 const NavBar = () => {
   const { user,signOutUser } = useContext(AuthContext);
@@ -16,11 +17,11 @@ const NavBar = () => {
 
 const links = <>
 
-<li className="text-xl text-orange-500"><a>Home</a></li>
-<li className="text-xl text-orange-500"><a>Add Blog</a></li>       
-<li className="text-xl text-orange-500"><a>All Blogs</a></li>
-<li className="text-xl text-orange-500"><a> Featured Blogs</a></li>
-<li className="text-xl text-orange-500"><a>Wishlist</a></li>
+<li className="text-xl text-orange-500 font-bold"><NavLink to="/">Home</NavLink></li>
+<li className="text-xl text-orange-500 font-bold"><a>Add Blog</a></li>       
+<li className="text-xl text-orange-500 font-bold"><a>All Blogs</a></li>
+<li className="text-xl text-orange-500 font-bold"><a> Featured Blogs</a></li>
+<li className="text-xl text-orange-500 font-bold"><a>Wishlist</a></li>
 
 </>
 
@@ -49,7 +50,10 @@ const links = <>
        {links}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">daisyUI</a>
+    <a className="btn btn-ghost text-xl">
+    <img className='w-24' src={logo} alt="" />
+    <h3 className="text-2xl text-orange-700 font-bold">Fashion Fusion</h3>
+    </a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -61,9 +65,9 @@ const links = <>
                     user ? <>
                         <button onClick={handleSignOut} className="btn">Sign out</button>
                     </> : <>
-                        <Link to="/register">Register</Link>
+                        <Link className="btn text-2xl text-teal-600 font-bold mr-5" to="/register">Register</Link>
                         <Link to="/signin">
-                            <button className="btn">Sign In</button>
+                            <button className="btn text-2xl text-teal-600 font-bold">Sign In</button>
                         </Link>
                     </>
                 }
