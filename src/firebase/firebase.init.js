@@ -5,13 +5,17 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAlsag9xno7wWbW66CjXsgh1czW9drzHiY",
-  authDomain: "fashion-fusion-b2c9f.firebaseapp.com",
-  projectId: "fashion-fusion-b2c9f",
-  storageBucket: "fashion-fusion-b2c9f.firebasestorage.app",
-  messagingSenderId: "498524220549",
-  appId: "1:498524220549:web:a2a38e21292cca966c0dec"
+  apiKey:VITE_apiKey ,
+  authDomain:VITE_authDomain ,
+  projectId:VITE_projectId ,
+  storageBucket:VITE_storageBucket ,
+  messagingSenderId:VITE_messagingSenderId ,
+  appId:VITE_appId ,
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
+// Initialize Firebase Authentication and get a reference to the service
+const auth = getAuth(app);
+export default auth;
