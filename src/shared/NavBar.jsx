@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
 const links = <>
 
-<li><a>Item 1</a></li>
-<li><a>Item 2</a></li>       
-<li><a>Item 3</a></li>
+<li className="text-xl text-orange-500"><a>Home</a></li>
+<li className="text-xl text-orange-500"><a>Add Blog</a></li>       
+<li className="text-xl text-orange-500"><a>All Blogs</a></li>
+<li className="text-xl text-orange-500"><a> Featured Blogs</a></li>
+<li className="text-xl text-orange-500"><a>Wishlist</a></li>
 
 </>
 
