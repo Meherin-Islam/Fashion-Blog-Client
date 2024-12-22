@@ -63,7 +63,7 @@ const links = <>
   <div className="navbar-end">
   {
                     user ? <>
-                        <button onClick={handleSignOut} className="btn">Sign out</button>
+                        <button onClick={handleSignOut} className="btn text-2xl text-teal-600 font-bold">Sign out</button>
                     </> : <>
                         <Link className="btn text-2xl text-teal-600 font-bold mr-5" to="/register">Register</Link>
                         <Link to="/signin">
