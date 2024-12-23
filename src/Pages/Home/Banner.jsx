@@ -4,7 +4,7 @@ import pic2 from '../../assets/pic/pic2.jpg';
 
 const Banner = () => {
     return (
-        <div className="hero bg-base-200 min-h-96">
+        <div className="hero bg-base-200 min-h-[400px] py-8 mb-14">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className='flex-1'>
                     <motion.img
@@ -18,7 +18,7 @@ const Banner = () => {
                         transition={{ duration: 8, repeat: Infinity, ease: easeInOut, delay: 4 }}
                         className="max-w-md w-80 rounded-t-[40px] rounded-br-[40px] border-l-4 border-b-4 border-teal-400 shadow-2xl mt-4" />
                 </div>
-                <div className='flex-1'>
+                <div className='flex-1 ml-8'>
                     <motion.h1
                         animate={{ y: [0, -10, 0] }}
                         transition={{ duration: 3, repeat: Infinity, ease: easeInOut }}
