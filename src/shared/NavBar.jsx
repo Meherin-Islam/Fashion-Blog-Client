@@ -81,11 +81,7 @@ const NavBar = () => {
                                 className="w-10 h-10 rounded-full border-2 border-teal-500"
                             />
                         )}
-                        {user.displayName && (
-                            <span className="text-xl text-teal-600 font-bold">
-                                {user.displayName}
-                            </span>
-                        )}
+                        
                         <button
                             onClick={handleSignOut}
                             className="btn text-2xl text-teal-600 font-bold">

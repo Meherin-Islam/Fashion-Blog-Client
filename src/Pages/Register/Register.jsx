@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import Lottie from "lottie-react";
 import registerLottieData from '../../assets/lottie/register.json';
 import AuthContext from "../../context/AuthContext/AuthContext";
+import SocialLogin from "../../shared/SocialLogin";
 
 
 const Register = () => {
@@ -14,8 +15,7 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         const photoURL = form.photoURL.value; 
-        const displayName = form.displayName.value; 
-
+       
        
         const validatePassword = (password) => {
             const errors = [];
@@ -61,20 +61,7 @@ const Register = () => {
                 <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                     <form onSubmit={handleRegister} className="card-body">
                         <h1 className="text-5xl font-bold text-center mb-3">Register now!</h1>
-
-                       
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Display Name</span>
-                            </label>
-                            <input
-                                type="text"
-                                name="displayName"
-                                placeholder="Your name"
-                                className="input input-bordered"
-                                required
-                            />
-                        </div>
+                   
 
                        
                         <div className="form-control">
@@ -128,9 +115,11 @@ const Register = () => {
 
                         
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Register</button>
+                            <button className="btn bg-teal-500">Register</button>
                         </div>
                     </form>
+                    <div className="divider"> OR</div>
+                    <SocialLogin></SocialLogin>
                 </div>
             </div>
         </div>
