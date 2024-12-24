@@ -22,9 +22,9 @@ const RecentBlogCard = ({ blog }) => {
                 <div className="card-actions flex justify-between  items-center mt-4">
 
                     <Link to={`/blogs/${_id}`}>
-                        <button className="btn bg-green-200">Details</button>
+                        <button className="btn bg-pink-700 hover:bg-pink-800 font-bold text-xl text-white">Details</button>
                     </Link>
-                    <button className='btn bg-blue-300 '>Wishlist</button>
+                    <button className='btn bg-blue-300 hover:bg-blue-400 font-bold text-xl'>Wishlist</button>
                 </div>
             </div>
         </div>

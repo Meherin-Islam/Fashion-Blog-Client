@@ -5,6 +5,8 @@ import MainLayout from "../layout/MainLayout";
 import Home from "../Pages/Home/Home";
 import Register from "../Pages/Register/Register";
 import SignIn from "../Pages/SignIn/SignIn";
+import BlogDetails from "../Pages/BlogDetails/BlogDetails";
+import PrivateRoute from "./PrivateRoute";
 
   const router = createBrowserRouter([
     {
@@ -16,6 +18,12 @@ import SignIn from "../Pages/SignIn/SignIn";
             path:'/',
             element:<Home></Home>
         },
+        {
+            path:'/blogs/:id',
+            element:<PrivateRoute><BlogDetails></BlogDetails></PrivateRoute>,
+            loader:({params}) => fetch(`http://localhost:5000/blogs/${params.id}`)
+        },
+        
         {
             path:'register',
             element:<Register></Register>

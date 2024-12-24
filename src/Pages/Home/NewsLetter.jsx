@@ -17,7 +17,7 @@ const NewsLetter = () => {
   };
 
   return (
-    <div className="newsletter-section bg-orange-800" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '20px' }}>
+    <div className="newsletter-section bg-orange-800 mb-14" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '20px' }}>
      
       <div className="newsletter-left" style={{ flex: 1 }}>
         <h2 className='text-5xl text-white font-bold mb-3'>Subscribe to Our Newsletter</h2>
