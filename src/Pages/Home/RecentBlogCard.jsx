@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify'; 
+import { FaHeart } from "react-icons/fa";
 import 'react-toastify/dist/ReactToastify.css'; 
 import UseAuth from '../../hooks/UseAuth';
 
@@ -40,7 +41,7 @@ const RecentBlogCard = ({ blog }) => {
     };
 
     return (
-        
+
         <div className="card card-compact bg-base-100 shadow-xl">
             <div className="m-2">
                 <img
@@ -61,7 +62,7 @@ const RecentBlogCard = ({ blog }) => {
                         onClick={handleWishlist}
                         className="btn bg-blue-300 hover:bg-blue-400 font-bold text-lg"
                     >
-                        Add to Wishlist
+                        Add to Wishlist <FaHeart></FaHeart>
                     </button>
                 </div>
             </div>

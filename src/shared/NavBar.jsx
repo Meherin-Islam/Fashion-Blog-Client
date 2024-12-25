@@ -28,7 +28,7 @@ const NavBar = () => {
                 <NavLink to="/allBlog"  >All Blogs</NavLink>
             </li>
             <li className="text-xl text-orange-500 font-bold">
-                <a>Featured Blogs</a>
+                <NavLink to="/featuredBlog">Featured Blogs</NavLink>
             </li>
             <li className="text-xl text-orange-500 font-bold">
                 <NavLink to="/wishlist">Wishlist</NavLink>
