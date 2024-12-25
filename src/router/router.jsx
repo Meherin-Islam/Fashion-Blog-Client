@@ -7,6 +7,7 @@ import Register from "../Pages/Register/Register";
 import SignIn from "../Pages/SignIn/SignIn";
 import BlogDetails from "../Pages/BlogDetails/BlogDetails";
 import PrivateRoute from "./PrivateRoute";
+import WishList from "../Pages/WishList/WishList";
 
   const router = createBrowserRouter([
     {
@@ -22,6 +23,10 @@ import PrivateRoute from "./PrivateRoute";
             path:'/blogs/:id',
             element:<PrivateRoute><BlogDetails></BlogDetails></PrivateRoute>,
             loader:({params}) => fetch(`http://localhost:5000/blogs/${params.id}`)
+        },
+        {
+          path:'/wishlist',
+          element:<PrivateRoute><WishList></WishList></PrivateRoute>
         },
         
         {

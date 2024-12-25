@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify'; 
+import 'react-toastify/dist/ReactToastify.css'; 
 import UseAuth from '../../hooks/UseAuth';
 
 const RecentBlogCard = ({ blog }) => {
@@ -6,13 +8,13 @@ const RecentBlogCard = ({ blog }) => {
     const { user } = UseAuth();
 
     const handleWishlist = async () => {
-        if (!user?.email) { // Ensure user is logged in
-            alert('Please log in to add to wishlist.');
+        if (!user?.email) { 
+            toast.error('Please log in to add to wishlist.'); 
             return;
         }
 
         const wishlistItem = {
-            userEmail: user.email, // Use user email from the authenticated user
+            userEmail: user.email, 
             blogId: _id,
         };
 
@@ -26,14 +28,14 @@ const RecentBlogCard = ({ blog }) => {
             });
 
             if (response.ok) {
-                alert('Blog added to wishlist successfully!');
+                toast.success('Blog added to wishlist successfully!'); 
             } else {
                 const error = await response.json();
-                alert(`Error adding to wishlist: ${error.message}`);
+                toast.error(`Error adding to wishlist: ${error.message}`); 
             }
         } catch (error) {
             console.error('Error adding to wishlist:', error);
-            alert('An error occurred. Please try again.');
+            toast.error('An error occurred. Please try again.'); // Error toast
         }
     };
 
@@ -50,13 +52,13 @@ const RecentBlogCard = ({ blog }) => {
                 <h2 className="card-title font-bold text-2xl">{title}</h2>
                 <div className="card-actions flex justify-between items-center mt-4">
                     <Link to={`/blogs/${_id}`}>
-                        <button className="btn bg-pink-700 hover:bg-pink-800 font-bold text-xl text-white">
-                            View Details
+                        <button className="btn bg-pink-700 hover:bg-pink-800 font-bold text-lg text-white">
+                             Details
                         </button>
                     </Link>
                     <button
                         onClick={handleWishlist}
-                        className="btn bg-blue-300 hover:bg-blue-400 font-bold text-xl"
+                        className="btn bg-blue-300 hover:bg-blue-400 font-bold text-lg"
                     >
                         Add to Wishlist
                     </button>

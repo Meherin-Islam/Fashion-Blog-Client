@@ -31,7 +31,7 @@ const NavBar = () => {
                 <a>Featured Blogs</a>
             </li>
             <li className="text-xl text-orange-500 font-bold">
-                <a>Wishlist</a>
+                <NavLink to="/wishlist">Wishlist</NavLink>
             </li>
         </>
     );
