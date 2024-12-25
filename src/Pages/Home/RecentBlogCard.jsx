@@ -35,7 +35,7 @@ const RecentBlogCard = ({ blog }) => {
             }
         } catch (error) {
             console.error('Error adding to wishlist:', error);
-            toast.error('An error occurred. Please try again.'); // Error toast
+            toast.error('An error occurred. Please try again.'); 
         }
     };
 

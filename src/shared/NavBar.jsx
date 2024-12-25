@@ -22,10 +22,10 @@ const NavBar = () => {
                 <NavLink to="/">Home</NavLink>
             </li>
             <li className="text-xl text-orange-500 font-bold">
-                <a>Add Blog</a>
+            <NavLink to="/addBlog"  >Add Blogs</NavLink>
             </li>
             <li className="text-xl text-orange-500 font-bold">
-                <a>All Blogs</a>
+                <NavLink to="/allBlog"  >All Blogs</NavLink>
             </li>
             <li className="text-xl text-orange-500 font-bold">
                 <a>Featured Blogs</a>
