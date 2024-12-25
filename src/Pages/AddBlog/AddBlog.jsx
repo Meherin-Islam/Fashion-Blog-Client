@@ -1,8 +1,10 @@
 import Swal from 'sweetalert2';
 import UseAuth from '../../hooks/UseAuth';
+import { useNavigate } from 'react-router-dom';
 
 const AddBlog = () => {
     const { user } = UseAuth();
+    const navigate = useNavigate();
 
     const handleAddBlog = e => {
         e.preventDefault();
@@ -36,23 +38,14 @@ const AddBlog = () => {
                         showConfirmButton: false,
                         timer: 1500
                     });
+                    navigate('/allBlog')
                 }
-            })
-            .catch((error) => {
-                console.error("Error adding blog:", error);
-                Swal.fire({
-                    position: "top-end",
-                    icon: "error",
-                    title: "Something went wrong!",
-                    showConfirmButton: false,
-                    timer: 1500
-                });
-            });
+            })          
     }
 
     return (
         <div className="flex justify-center items-center min-h-screen bg-gray-100 my-5">
-            <div className="w-full max-w-lg p-8 my-5 bg-pink-200 shadow-lg rounded-lg">
+            <div className="w-full max-w-xl p-8 my-5 bg-pink-200 shadow-lg rounded-lg">
                 <h2 className="text-4xl font-bold text-center mb-6 text-pink-900">Write a New Blog</h2>
                 <form onSubmit={handleAddBlog} className="space-y-6">
                     <div className="form-control">
@@ -82,8 +75,8 @@ const AddBlog = () => {
                     <div className="form-control">
                         <label className="label text-xl font-bold text-pink-700">Short Description</label>
                         <textarea
-                            name="short_description" // Ensure name matches what you want to send
-                            className="textarea textarea-bordered w-full p-3 text-lg rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-700"
+                            name="short_description" 
+                            className="textarea textarea-bordered w-full p-3 text-lg rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-700"
                             placeholder="Enter a short description"
                             required
                         ></textarea>
@@ -111,7 +104,7 @@ const AddBlog = () => {
                  
 
                     <div className="form-control mt-6">
-                        <button className="btn text-xl text-white font-bold bg-pink-700 w-full py-3 rounded-lg hover:bg-pink-800">
+                        <button className="btn text-lg text-white font-bold bg-pink-700 w-full py-2 rounded-lg hover:bg-pink-800">
                             Submit
                         </button>
                     </div>
