@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import RecentBlogCard from './RecentBlogCard';
+import { Link } from 'react-router-dom';
+import { FaArrowRight } from 'react-icons/fa';
 
 const RecentBlogs = () => {
   const [blogs, setBlogs] = useState([]);
@@ -14,7 +16,7 @@ const RecentBlogs = () => {
 
   return (
     <div>
-      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-6'>
         {
           // Limit to 6 blogs using slice
           blogs.slice(0, 6).map(blog => (
@@ -22,6 +24,7 @@ const RecentBlogs = () => {
           ))
         }
       </div>
+     <Link to={`/allBlog`}> <button className='text-center text-xl btn  mb-10 bg-amber-400 font-bold'>Click To See All Blogs<FaArrowRight></FaArrowRight></button></Link>
     </div>
   );
 };

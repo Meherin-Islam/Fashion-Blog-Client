@@ -40,6 +40,7 @@ const RecentBlogCard = ({ blog }) => {
     };
 
     return (
+        
         <div className="card card-compact bg-base-100 shadow-xl">
             <div className="m-2">
                 <img
@@ -64,7 +65,9 @@ const RecentBlogCard = ({ blog }) => {
                     </button>
                 </div>
             </div>
+            
         </div>
+        
     );
 };
 
