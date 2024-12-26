@@ -12,15 +12,15 @@ const AddBlog = () => {
         const formData = new FormData(e.target);
         const blogData = {};
 
-      
+
         formData.forEach((value, key) => {
             blogData[key] = value;
         });
 
-       // console.log(blogData);
+        // console.log(blogData);
 
-        
-        fetch('http://localhost:5000/blogs', {
+
+        fetch('https://fashion-blog-server.vercel.app/blogs', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -47,7 +47,7 @@ const AddBlog = () => {
             <div className="w-full max-w-xl p-8 my-5 bg-pink-200 shadow-lg rounded-lg">
                 <h2 className="text-4xl font-bold text-center mb-6 text-pink-900">Write a New Blog</h2>
                 <form onSubmit={handleAddBlog} className="space-y-6">
-                    
+
                     <div className="form-control">
                         <label className="label text-xl font-bold text-pink-700">Blog Title</label>
                         <input
@@ -59,7 +59,7 @@ const AddBlog = () => {
                         />
                     </div>
 
-                    
+
                     <div className="form-control">
                         <label className="label text-xl font-bold text-pink-700">Image URL</label>
                         <input
@@ -71,7 +71,7 @@ const AddBlog = () => {
                         />
                     </div>
 
-                   
+
                     <div className="form-control">
                         <label className="label text-xl font-bold text-pink-700">Short Description</label>
                         <textarea
@@ -82,10 +82,10 @@ const AddBlog = () => {
                         ></textarea>
                     </div>
 
-                   
-                   
 
-                    
+
+
+
                     <div className="form-control">
                         <label className="label text-xl font-bold text-pink-700">Category</label>
                         <select
@@ -116,7 +116,7 @@ const AddBlog = () => {
                         ></textarea>
                     </div>
 
-                    
+
                     <div className="form-control mt-6">
                         <button className="btn text-lg text-white font-bold bg-pink-700 w-full py-2 rounded-lg hover:bg-pink-800">
                             Submit

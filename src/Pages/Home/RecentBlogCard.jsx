@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify'; 
+import { toast, ToastContainer } from 'react-toastify';
 import { FaHeart } from "react-icons/fa";
-import 'react-toastify/dist/ReactToastify.css'; 
+import 'react-toastify/dist/ReactToastify.css';
 import UseAuth from '../../hooks/UseAuth';
 
 const RecentBlogCard = ({ blog }) => {
@@ -9,18 +9,18 @@ const RecentBlogCard = ({ blog }) => {
     const { user } = UseAuth();
 
     const handleWishlist = async () => {
-        if (!user?.email) { 
-            toast.error('Please log in to add to wishlist.'); 
+        if (!user?.email) {
+            toast.error('Please log in to add to wishlist.');
             return;
         }
 
         const wishlistItem = {
-            userEmail: user.email, 
+            userEmail: user.email,
             blogId: _id,
         };
 
         try {
-            const response = await fetch('http://localhost:5000/wishlist', {
+            const response = await fetch('https://fashion-blog-server.vercel.app/wishlist', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -29,20 +29,20 @@ const RecentBlogCard = ({ blog }) => {
             });
 
             if (response.ok) {
-                toast.success('Blog added to wishlist successfully!'); 
+                toast.success('Blog added to wishlist successfully!');
             } else {
                 const error = await response.json();
-                toast.error(`Error adding to wishlist: ${error.message}`); 
+                toast.error(`Error adding to wishlist: ${error.message}`);
             }
         } catch (error) {
             console.error('Error adding to wishlist:', error);
-            toast.error('An error occurred. Please try again.'); 
+            toast.error('An error occurred. Please try again.');
         }
     };
 
     return (
         <div className="card card-compact bg-base-100 shadow-xl">
-            <ToastContainer position="top-right"  autoClose={5000} />
+            <ToastContainer position="top-right" autoClose={5000} />
             <div className="m-2">
                 <img
                     className="h-64 p-3 rounded-md"
@@ -55,7 +55,7 @@ const RecentBlogCard = ({ blog }) => {
                 <div className="card-actions flex justify-between items-center mt-4">
                     <Link to={`/blogs/${_id}`}>
                         <button className="btn bg-pink-700 hover:bg-pink-800 font-bold text-lg text-white">
-                             Details
+                            Details
                         </button>
                     </Link>
                     <button

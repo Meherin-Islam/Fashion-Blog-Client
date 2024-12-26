@@ -8,7 +8,7 @@ const RecentBlogs = () => {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/blogs')
+    fetch('https://fashion-blog-server.vercel.app/blogs')
       .then((res) => res.json())
       .then((data) => {
         setBlogs(data);
@@ -20,13 +20,13 @@ const RecentBlogs = () => {
       Recent Blogs
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-6 mt-4'>
         {
-          
+
           blogs.slice(0, 6).map(blog => (
             <motion.div
               key={blog._id}
-              initial={{ opacity: 0, y: 30, scale: 0.8 }}  
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}   
-              viewport={{ once: false, amount: 0.2 }} 
+              initial={{ opacity: 0, y: 30, scale: 0.8 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 1.5, ease: 'easeOut' }}  // 
             >
               <RecentBlogCard blog={blog} />

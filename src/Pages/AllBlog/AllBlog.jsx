@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaHeart } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
-import Swal from 'sweetalert2';  
+import Swal from 'sweetalert2';
 import UseAuth from "../../hooks/UseAuth";
 
 const AllBlog = () => {
@@ -14,17 +14,17 @@ const AllBlog = () => {
   const [wishlist, setWishlist] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/blogs")
+    fetch("https://fashion-blog-server.vercel.app/blogs")
       .then((res) => res.json())
       .then((data) => {
         setBlogs(data);
-        setFilteredBlogs(data); 
+        setFilteredBlogs(data);
       })
       .catch((err) => console.error("Error fetching blogs:", err));
 
-   
+
     if (user?.email) {
-      fetch(`http://localhost:5000/wishlist?email=${user.email}`)
+      fetch(`https://fashion-blog-server.vercel.app/wishlist?email=${user.email}`)
         .then((res) => res.json())
         .then((data) => setWishlist(data))
         .catch((err) => console.error("Error fetching wishlist:", err));
@@ -66,7 +66,7 @@ const AllBlog = () => {
       return;
     }
 
-    
+
     if (wishlist.some(item => item.blogId === blogId)) {
       Swal.fire({
         icon: 'info',
@@ -82,7 +82,7 @@ const AllBlog = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:5000/wishlist", {
+      const response = await fetch("https://fashion-blog-server.vercel.app/wishlist", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -91,7 +91,7 @@ const AllBlog = () => {
       });
 
       if (response.ok) {
-      
+
         setWishlist([...wishlist, wishlistItem]);
 
         Swal.fire({

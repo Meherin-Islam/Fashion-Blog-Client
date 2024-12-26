@@ -5,7 +5,7 @@ const FeaturedBlog = () => {
   const [featuredBlogs, setFeaturedBlogs] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/featured-blogs")
+    fetch("https://fashion-blog-server.vercel.app/featured-blogs")
       .then((res) => res.json())
       .then((data) => setFeaturedBlogs(data))
       .catch((err) => console.error("Error fetching featured blogs:", err));
@@ -55,7 +55,7 @@ const FeaturedBlog = () => {
           <DataTable
             columns={columns}
             data={featuredBlogs}
-            defaultSortField="title" 
+            defaultSortField="title"
             pagination
             highlightOnHover
             responsive
