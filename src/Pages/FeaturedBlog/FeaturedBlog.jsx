@@ -12,7 +12,7 @@ const FeaturedBlog = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-teal-100 py-8 px-3 mb-10">
+    <div className="min-h-screen bg-red-200 py-8 px-3 mb-10">
       <div className="container mx-auto mb-5">
         <h1 className="text-4xl font-bold text-center text-red-700 mb-8">
           Featured Blogs

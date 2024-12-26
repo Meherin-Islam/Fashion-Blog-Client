@@ -18,19 +18,19 @@ const NavBar = () => {
 
     const links = (
         <>
-            <li className="text-xl text-orange-500 font-bold">
+            <li className="text-2xl text-orange-500 font-bold">
                 <NavLink to="/">Home</NavLink>
             </li>
-            <li className="text-xl text-orange-500 font-bold">
-            <NavLink to="/addBlog"  >Add Blogs</NavLink>
+            <li className="text-2xl text-orange-500 font-bold">
+                <NavLink to="/addBlog">Add Blogs</NavLink>
             </li>
-            <li className="text-xl text-orange-500 font-bold">
-                <NavLink to="/allBlog"  >All Blogs</NavLink>
+            <li className="text-2xl text-orange-500 font-bold">
+                <NavLink to="/allBlog">All Blogs</NavLink>
             </li>
-            <li className="text-xl text-orange-500 font-bold">
+            <li className="text-2xl text-orange-500 font-bold">
                 <NavLink to="/featuredBlog">Featured Blogs</NavLink>
             </li>
-            <li className="text-xl text-orange-500 font-bold">
+            <li className="text-2xl text-orange-500 font-bold">
                 <NavLink to="/wishlist">Wishlist</NavLink>
             </li>
         </>
@@ -63,10 +63,10 @@ const NavBar = () => {
                 </div>
                 <a className="btn btn-ghost text-xl">
                     <img className="w-24" src={logo} alt="" />
-                    <h3 className="text-2xl text-orange-700 font-bold">Fashion Fusion</h3>
+                    <h3 className="text-2xl text-orange-700  font-bold ">Fashion  Fusion</h3>
                 </a>
             </div>
-            <div className="navbar-center hidden lg:flex">
+            <div className="navbar-center hidden lg:flex ml-20">
                 <ul className="menu menu-horizontal px-1">
                     {links}
                 </ul>

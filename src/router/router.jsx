@@ -11,17 +11,25 @@ import WishList from "../Pages/WishList/WishList";
 import AddBlog from "../Pages/AddBlog/AddBlog";
 import AllBlog from "../Pages/AllBlog/AllBlog";
 import FeaturedBlog from "../Pages/FeaturedBlog/FeaturedBlog";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import TrendDetails from "../Pages/Home/TrendDetails";
+
 
   const router = createBrowserRouter([
     {
       path: "/",
       element: <MainLayout></MainLayout>,
-      errorElement:<h2>Route Not Found</h2>,
+      errorElement:<ErrorPage></ErrorPage>,
       children:[
         {
             path:'/',
             element:<Home></Home>
         },
+        {
+          path:'/trends/:id',
+          element:<PrivateRoute><TrendDetails></TrendDetails> </PrivateRoute>,
+          loader:({params}) => fetch(`http://localhost:5000/recent_trends/${params.id}`)
+      },
         {
             path:'/blogs/:id',
             element:<PrivateRoute><BlogDetails></BlogDetails></PrivateRoute>,
@@ -39,6 +47,8 @@ import FeaturedBlog from "../Pages/FeaturedBlog/FeaturedBlog";
           path:'/featuredBlog',
           element:<FeaturedBlog></FeaturedBlog>
         },
+        
+        
         {
           path:'/wishlist',
           element:<PrivateRoute><WishList></WishList></PrivateRoute>
