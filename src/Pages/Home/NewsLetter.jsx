@@ -1,7 +1,8 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import pic from '../../assets/picn.jpg'
+import { motion } from 'framer-motion'; 
+import pic from '../../assets/picn.jpg';
 
 const NewsLetter = () => {
   const [email, setEmail] = useState('');
@@ -17,35 +18,71 @@ const NewsLetter = () => {
   };
 
   return (
-    <div className="newsletter-section bg-orange-800 mb-14" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '20px' }}>
-     
-      <div className="newsletter-left" style={{ flex: 1 }}>
-        <h2 className='text-5xl text-white font-bold mb-3'>Subscribe to Our Newsletter</h2>
-        <p className='text-white font-semibold mb-4'>Stay updated with the latest news and updates from us.</p>
+    <motion.div
+      className="flex justify-between items-center p-8 bg-amber-100 rounded-xl mb-14"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: [0, -10, 0] }} 
+      transition={{ 
+        duration: 3, 
+        ease: 'easeInOut',
+        repeat: Infinity, 
+        repeatType: "mirror" 
+      }}
+    >
+      <div className="flex-1">
+        <motion.h2
+          className="text-5xl text-pink-800 font-bold mb-3"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.0, delay: 0.5 }}
+        >
+          Subscribe to Our Newsletter
+        </motion.h2>
+        <motion.p
+          className="text-pink-700 font-bold mb-4"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.0, delay: 0.8 }}
+        >
+          Stay updated with the latest news and updates from us.
+        </motion.p>
         <form onSubmit={handleSubscribe}>
-          <input
+          <motion.input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
             required
-            style={{ padding: '10px', width: '80%', marginBottom: '10px' }}
+            className="p-3 w-4/5 mb-4 rounded-md border-2 border-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-500"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 1.0 }}
           />
           <br />
-          <button className='btn text-2xl bg-red-900 rounded-none text-white' type="submit" >
+          <motion.button
+            className="btn text-2xl bg-pink-700 text-white py-2 px-6 hover:bg-pink-800"
+            type="submit"
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.3 }}
+          >
             Subscribe
-          </button>
+          </motion.button>
         </form>
       </div>
 
-      
-      <div className="newsletter-right" style={{ flex: 1 }}>
-        <img src={pic} alt="Newsletter" style={{ width: '80%', height: 'auto' }} />
+      <div className="flex-1">
+        <motion.img
+          src={pic}
+          alt="Newsletter"
+          className="w-4/5 h-auto rounded-lg"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.0 }}
+        />
       </div>
 
-     
       <ToastContainer />
-    </div>
+    </motion.div>
   );
 };
 
