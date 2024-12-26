@@ -18,19 +18,19 @@ const NavBar = () => {
 
     const links = (
         <>
-            <li className="text-2xl text-orange-500 font-bold">
+            <li className="text-xl text-orange-500 font-bold">
                 <NavLink to="/">Home</NavLink>
             </li>
-            <li className="text-2xl text-orange-500 font-bold">
+            <li className="text-xl text-orange-500 font-bold">
                 <NavLink to="/addBlog">Add Blogs</NavLink>
             </li>
-            <li className="text-2xl text-orange-500 font-bold">
+            <li className="text-xl text-orange-500 font-bold">
                 <NavLink to="/allBlog">All Blogs</NavLink>
             </li>
-            <li className="text-2xl text-orange-500 font-bold">
+            <li className="text-xl text-orange-500 font-bold">
                 <NavLink to="/featuredBlog">Featured Blogs</NavLink>
             </li>
-            <li className="text-2xl text-orange-500 font-bold">
+            <li className="text-xl text-orange-500 font-bold">
                 <NavLink to="/wishlist">Wishlist</NavLink>
             </li>
         </>
@@ -66,7 +66,7 @@ const NavBar = () => {
                     <h3 className="text-2xl text-orange-700  font-bold ">Fashion  Fusion</h3>
                 </a>
             </div>
-            <div className="navbar-center hidden lg:flex ml-20">
+            <div className="navbar-center hidden lg:flex ">
                 <ul className="menu menu-horizontal px-1">
                     {links}
                 </ul>

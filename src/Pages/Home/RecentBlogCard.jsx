@@ -42,7 +42,7 @@ const RecentBlogCard = ({ blog }) => {
 
     return (
         <div className="card card-compact bg-base-100 shadow-xl">
-            <ToastContainer position="top-right" autoClose={5000} />
+            <ToastContainer position="top-right"  autoClose={5000} />
             <div className="m-2">
                 <img
                     className="h-64 p-3 rounded-md"

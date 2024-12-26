@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 
 const BlogDetails = () => {
-    const {title, image, short_description, category} = useLoaderData();
+    const {title, image, short_description, long_description, category} = useLoaderData();
     
     return (
         
@@ -15,6 +15,9 @@ const BlogDetails = () => {
       <p className="text-center text-2xl font-bold text-teal-700">Category: {category}</p>
       <p className="mb-5 text-xl font-bold ">
         {short_description}
+      </p>
+      <p className="mb-5 text-lg  ">
+        {long_description}
       </p>
     
     </div>
