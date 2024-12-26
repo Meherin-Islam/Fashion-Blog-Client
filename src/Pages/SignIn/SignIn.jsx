@@ -17,15 +17,15 @@ const SignIn = () => {
         const email = form.email.value;
         const password = form.password.value;
         
-        console.log(email,password);
+      //  console.log(email,password);
     
         signInUser(email, password)
             .then(result => {
-                 console.log('sign in' , result.user)
+                // console.log('sign in' , result.user)
                  navigate(from);
             })
             .catch(error => {
-                console.log(error.message);
+               // console.log(error.message);
             })
 
       };

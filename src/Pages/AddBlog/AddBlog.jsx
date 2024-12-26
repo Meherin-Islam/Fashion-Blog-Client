@@ -17,7 +17,7 @@ const AddBlog = () => {
             blogData[key] = value;
         });
 
-        console.log(blogData);
+       // console.log(blogData);
 
         
         fetch('http://localhost:5000/blogs', {

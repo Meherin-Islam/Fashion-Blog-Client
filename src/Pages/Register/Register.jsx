@@ -42,10 +42,10 @@ const Register = () => {
             try {
                 const userCredential = await createUser(email, password); 
                 const user = userCredential.user;
-
+             
                
-                await updateUserProfile({ displayName, photoURL });
-                console.log("User registered and profile updated:", user);
+                await updateUserProfile({  photoURL });
+               // console.log("User registered and profile updated:", user);
             } catch (error) {
                 console.error("Error during registration:", error.message);
             }
